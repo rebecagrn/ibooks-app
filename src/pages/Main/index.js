@@ -3,10 +3,10 @@ import { FaSearch } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 // import api from '../../services/api';
-
 import Container from '../../components/Container';
 import { MainTitle, Form, SubmitButton, BookCard, CardFooter } from './styles';
 import NavBar from '../../components/NavBar';
+import cat from '../../assets/img/zelda_thecat.jpg';
 
 function Main() {
   const [book, setBook] = useState('');
@@ -61,7 +61,7 @@ function Main() {
                 <img
                   src={
                     book.volumeInfo.imageLinks === undefined
-                      ? ''
+                      ? `${cat}`
                       : `${book.volumeInfo.imageLinks.thumbnail}`
                   }
                   alt={book.volumeInfo.title}

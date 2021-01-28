@@ -1,15 +1,15 @@
 import React from 'react';
-// import { useParams } from 'react-router-dom';
+import NavBar from '../../components/NavBar';
 import Container from '../../components/Container';
-import { MainTitle } from './styles';
 
 function Details() {
   return (
-    <Container>
-      <MainTitle>
+    <>
+      <NavBar />
+      <Container>
         <h1>Details</h1>
-      </MainTitle>
-    </Container>
+      </Container>
+    </>
   );
 }
 

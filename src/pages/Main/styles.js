@@ -50,16 +50,26 @@ export const BookCard = styled.div`
   align-items: center;
 
   .card-item {
-    flex: 1 0 20%;
+    flex: 1 0 25%;
     margin: 10px;
-    min-height: 230px;
-    background: #f1f1f1;
+    min-height: 330px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
+    padding: 10px;
   }
 
   img {
     display: block;
     margin: 0 auto;
     padding: 5px 8px;
+  }
+
+  .card-footer {
+    background: #00a8ff;
+    color: #fff;
+    border-radius: 4px;
+    padding: 10px;
+    margin-top: auto;
   }
 `;

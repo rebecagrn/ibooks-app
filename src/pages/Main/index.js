@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 // import api from '../../services/api';
 
 import Container from '../../components/Container';
+import Header from '../../components/Header';
 import { MainTitle, Form, SubmitButton, BookCard } from './styles';
 
-export default function Main() {
+function Main() {
   const [book, setBook] = useState('');
   const [result, setResult] = useState([]);
   // const [apiKey, setApiKey] = useState(
@@ -37,6 +38,7 @@ export default function Main() {
 
   return (
     <Container>
+      <Header />
       <MainTitle>
         <h1>Books</h1>
       </MainTitle>
@@ -54,10 +56,23 @@ export default function Main() {
       <BookCard>
         {result.map((book) => (
           <div className="card-item" key={book.id}>
-            <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.title} />
+            <Link to={`/details/${encodeURIComponent(book.id)}`}>
+              <img
+                src={book.volumeInfo.imageLinks.thumbnail}
+                alt={book.volumeInfo.title}
+              />
+            </Link>
+            <div className="card-footer">
+              <h3>
+                {book.volumeInfo.title} - {book.volumeInfo.subtitle}
+              </h3>
+              <p>Autor: {book.volumeInfo.authors}</p>
+            </div>
           </div>
         ))}
       </BookCard>
     </Container>
   );
 }
+
+export default Main;

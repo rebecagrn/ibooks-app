@@ -28,7 +28,7 @@ export const Form = styled.form`
 export const SubmitButton = styled.button.attrs({
   type: 'submit',
 })`
-  background: #00a8ff;
+  background: #5009ff;
   padding: 0 15px;
   border: 0;
   margin-left: 10px;
@@ -52,24 +52,57 @@ export const BookCard = styled.div`
   .card-item {
     flex: 1 0 25%;
     margin: 10px;
-    min-height: 330px;
+    max-width: 300px;
+    min-height: 340px;
     background: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 20px rgb(0 0 0 / 10%);
     border-radius: 10px;
-    padding: 10px;
+    position: relative;
+    overflow: hidden;
+
+    @media (max-width: 768px) {
+      flex: 1 0 270px;
+    }
   }
 
   img {
+    max-width: 160px;
+    min-width: 140px;
     display: block;
-    margin: 0 auto;
+    object-fit: cover;
+    margin: 10px auto;
     padding: 5px 8px;
   }
+`;
 
-  .card-footer {
-    background: #00a8ff;
-    color: #fff;
-    border-radius: 4px;
-    padding: 10px;
-    margin-top: auto;
+export const CardFooter = styled.div`
+  color: #292929;
+  border-radius: 4px;
+  border-top: 1px solid #f5f5f5;
+  padding: 10px;
+  margin-top: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  h3 {
+    font-size: 16px;
+    line-height: 1.3;
+    margin: 15 0;
+  }
+
+  p {
+    margin-top: 5px;
+  }
+
+  @media (max-width: 768px) {
+    h3 {
+      font-size: 13px;
+    }
+
+    p {
+      font-size: 12px;
+    }
   }
 `;

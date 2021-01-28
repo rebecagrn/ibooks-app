@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import './fonts.css';
 
 export default createGlobalStyle`
   * {
@@ -13,7 +14,8 @@ export default createGlobalStyle`
   }
 
   body {
-    background: #c7ecee;
+    font-family: 'Montserrat', sans-serif !important;
+    background: #fefefe;
     -webkit-font-smoothing: antialiased !important;
   }
 

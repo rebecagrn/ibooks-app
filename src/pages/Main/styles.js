@@ -90,6 +90,10 @@ export const CardFooter = styled.div`
     font-size: 16px;
     line-height: 1.3;
     margin: 15 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 
   p {

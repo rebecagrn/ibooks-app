@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
+// import { Link } from 'react-router-dom';
 import axios from 'axios';
 // import api from '../../services/api';
 
 import Container from '../../components/Container';
-import { MainTitle, Form, SubmitButton } from './styles';
+import { MainTitle, Form, SubmitButton, BookCard } from './styles';
 
 export default function Main() {
   const [book, setBook] = useState('');
@@ -50,12 +51,13 @@ export default function Main() {
           <FaSearch color="#fff" size={14} />
         </SubmitButton>
       </Form>
-
-      {result.map((book) => (
-        <li key={book.id}>
-          <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.title} />
-        </li>
-      ))}
+      <BookCard>
+        {result.map((book) => (
+          <div className="card-item" key={book.id}>
+            <img src={book.volumeInfo.imageLinks.thumbnail} alt={book.title} />
+          </div>
+        ))}
+      </BookCard>
     </Container>
   );
 }

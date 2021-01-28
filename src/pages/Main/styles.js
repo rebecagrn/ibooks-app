@@ -42,3 +42,24 @@ export const SubmitButton = styled.button.attrs({
     margin: 0;
   }
 `;
+
+export const BookCard = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  .card-item {
+    flex: 1 0 20%;
+    margin: 10px;
+    min-height: 230px;
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  img {
+    display: block;
+    margin: 0 auto;
+    padding: 5px 8px;
+  }
+`;

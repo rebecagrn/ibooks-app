@@ -6,6 +6,7 @@ import axios from 'axios';
 
 import Container from '../../components/Container';
 import { MainTitle, Form, SubmitButton, BookCard, CardFooter } from './styles';
+import NavBar from '../../components/NavBar';
 
 function Main() {
   const [book, setBook] = useState('');
@@ -24,7 +25,7 @@ function Main() {
 
     axios
       .get(
-        `https://www.googleapis.com/books/v1/volumes?q=${book}&key=${apiKey}&maxResults=20`
+        `https://www.googleapis.com/books/v1/volumes?q=${book}&key=${apiKey}&maxResults=40`
       )
       .then((resp) => {
         setResult(resp.data.items);
@@ -32,40 +33,52 @@ function Main() {
   }
 
   return (
-    <Container>
-      <MainTitle>
-        <h1>Books</h1>
-      </MainTitle>
-      <Form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Search..."
-          value={book}
-          onChange={handleInputChange}
-        />
-        <SubmitButton>
-          <FaSearch color="#fff" size={14} />
-        </SubmitButton>
-      </Form>
-      <BookCard>
-        {result.map((book) => (
-          <div className="card-item" key={book.id}>
-            <Link to={`/details/${book.id}`}>
-              <img
-                src={book.volumeInfo.imageLinks.thumbnail}
-                alt={book.volumeInfo.title}
-              />
-            </Link>
-            <CardFooter>
-              <h3>{book.volumeInfo.title}</h3>
-              <p>
-                <strong>Autor:</strong> {book.volumeInfo.authors}
-              </p>
-            </CardFooter>
-          </div>
-        ))}
-      </BookCard>
-    </Container>
+    <>
+      <NavBar />
+      <Container>
+        <MainTitle>
+          <h1>Books</h1>
+        </MainTitle>
+        <Form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            placeholder="Search..."
+            value={book}
+            onChange={handleInputChange}
+          />
+          <SubmitButton>
+            <FaSearch color="#fff" size={14} />
+          </SubmitButton>
+        </Form>
+        <BookCard>
+          {result.map((book) => (
+            <div className="card-item" key={book.id}>
+              <a
+                href={book.volumeInfo.previewLink}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <img
+                  src={
+                    book.volumeInfo.imageLinks === undefined
+                      ? ''
+                      : `${book.volumeInfo.imageLinks.thumbnail}`
+                  }
+                  alt={book.volumeInfo.title}
+                />
+              </a>
+              <CardFooter>
+                <h3>{book.volumeInfo.title}</h3>
+                <p>
+                  <strong>Autor:</strong> {book.volumeInfo.authors}
+                </p>
+                <Link to={`/details/${book.id}`}>Ver mais</Link>
+              </CardFooter>
+            </div>
+          ))}
+        </BookCard>
+      </Container>
+    </>
   );
 }
 

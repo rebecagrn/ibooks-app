@@ -1,14 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logoImg from '../../assets/img/logo.png';
 import { NavBar } from './styles';
 
 export default function Navbar() {
   return (
     <NavBar>
+      <div>
+        <Link to="/">
+          <img src={logoImg} width={40} alt="Logo" />
+        </Link>
+      </div>
       <ul>
         <li>
           <Link to="/">Home</Link>
-          <Link to="/details">Details</Link>
         </li>
       </ul>
     </NavBar>

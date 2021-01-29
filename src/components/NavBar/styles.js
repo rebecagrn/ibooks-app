@@ -5,7 +5,7 @@ export const NavBar = styled.nav`
   padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-between;
   background: #5009ff;
 
   ul {
@@ -17,7 +17,6 @@ export const NavBar = styled.nav`
     color: #fff;
     font-size: 16px;
     font-weight: 600;
-    margin-right: 25px;
 
     &:hover {
       opacity: 0.9;

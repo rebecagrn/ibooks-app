@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import axios from 'axios';
+// import ReactPaginate from 'react-paginate';
 // import api from '../../services/api';
 import Container from '../../components/Container';
 import { MainTitle, Form, SubmitButton, BookCard, CardFooter } from './styles';
 import NavBar from '../../components/NavBar';
+import CardPagination from '../../components/Pagination';
 import cat from '../../assets/img/zelda_thecat.jpg';
 
 function Main() {
@@ -54,7 +56,7 @@ function Main() {
           {result.map((book) => (
             <div className="card-item" key={book.id}>
               <a
-                href={book.volumeInfo.previewLink}
+                href={book.volumeInfo.infoLink}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -72,11 +74,12 @@ function Main() {
                 <p>
                   <strong>Autor:</strong> {book.volumeInfo.authors}
                 </p>
-                <Link to={`/details/${book.id}`}>Ver mais</Link>
+                {/* <Link to={`/details/${book.id}`}>Ver mais</Link> */}
               </CardFooter>
             </div>
           ))}
         </BookCard>
+        <CardPagination />
       </Container>
     </>
   );

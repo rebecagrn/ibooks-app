@@ -100,6 +100,19 @@ export const CardFooter = styled.div`
     margin-top: 5px;
   }
 
+  .footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  button {
+    background: transparent;
+    display: flex;
+    align-items: center;
+  }
+
   @media (max-width: 768px) {
     h3 {
       font-size: 13px;
@@ -112,8 +125,6 @@ export const CardFooter = styled.div`
 `;
 
 export const ReadMore = styled.div`
-  margin-top: 15px;
-
   a {
     color: #5009ff;
 

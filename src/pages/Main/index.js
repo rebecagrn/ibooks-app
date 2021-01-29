@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { FaSearch, FaHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-// import ReactPaginate from 'react-paginate';
+import { GlobalContext } from '../../context/GlobalState';
 // import api from '../../services/api';
 import Container from '../../components/Container';
 import {
@@ -20,6 +20,14 @@ import cat from '../../assets/img/zelda_thecat.jpg';
 function Main() {
   const [book, setBook] = useState('');
   const [result, setResult] = useState([]);
+  const { addBookToFavorite, favorite } = useContext(GlobalContext);
+
+  let storedBook = favorite.find((obj) => obj.id === book.id);
+  console.log(storedBook);
+  console.log(favorite);
+
+  const favoriteDisabled = storedBook ? true : false;
+  console.log(favoriteDisabled);
 
   const apiKey = 'AIzaSyBQzHEpacFfXbkBuVY1rXJbOWVrB0_W8Ho';
 
@@ -81,12 +89,16 @@ function Main() {
                 <p>
                   <strong>Autor:</strong> {book.volumeInfo.authors}
                 </p>
-                <div style={{ display: 'flex' }}>
+                <div className="footer-links">
                   <ReadMore>
                     <Link to={`/details/${book.id}`}>Ler mais</Link>
                   </ReadMore>
-                  <button className="btn" type="button">
-                    <FaHeart color="red" size={14} />
+                  <button
+                    type="button"
+                    disabled={favoriteDisabled}
+                    onClick={() => addBookToFavorite(book)}
+                  >
+                    <FaHeart color="#222" size={14} />
                   </button>
                 </div>
               </CardFooter>

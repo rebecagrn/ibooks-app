@@ -1,9 +1,11 @@
-import React, { createContext, useReducer } from 'react';
+import React, { createContext, useReducer, useEffect } from 'react';
 import AppReducer from './AppReducer';
 
 // initial state
 const initialState = {
-  favorite: [],
+  favorite: localStorage.getItem('favorite')
+    ? JSON.parse(localStorage.getItem('favorite'))
+    : [],
 };
 
 // create context
@@ -12,6 +14,10 @@ export const GlobalContext = createContext(initialState);
 // provider components
 export const GlobalProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState);
+
+  useEffect(() => {
+    localStorage.setItem('favorite', JSON.stringify(state.favorite));
+  }, [state]);
 
   // actions
   const addBookToFavorite = (book) => {

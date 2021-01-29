@@ -10,6 +10,11 @@ export const NavBar = styled.nav`
 
   ul {
     list-style: none;
+    display: flex;
+  }
+
+  li {
+    margin: 0 10px;
   }
 
   a {

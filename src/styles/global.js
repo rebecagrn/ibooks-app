@@ -27,5 +27,14 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
+    appearance: none !important;
+    border: 0;
+
+    &:disabled,
+    button[disabled] {
+      border: 1px solid #999999;
+      background-color: #cccccc;
+      color: #666666;
+    }
   }
 `;

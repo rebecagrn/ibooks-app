@@ -15,6 +15,9 @@ export default function Navbar() {
         <li>
           <Link to="/">Home</Link>
         </li>
+        <li>
+          <Link to="/favorites">Favoritos</Link>
+        </li>
       </ul>
     </NavBar>
   );

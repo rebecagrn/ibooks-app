@@ -5,12 +5,10 @@ import { GlobalProvider } from './context/GlobalState';
 
 function App() {
   return (
-    <>
-      <GlobalProvider>
-        <Routes />
-        <GlobalStyle />
-      </GlobalProvider>
-    </>
+    <GlobalProvider>
+      <Routes />
+      <GlobalStyle />
+    </GlobalProvider>
   );
 }
 

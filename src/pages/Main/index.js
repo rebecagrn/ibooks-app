@@ -21,13 +21,8 @@ function Main() {
   const [book, setBook] = useState('');
   const [result, setResult] = useState([]);
   const { addBookToFavorite, favorite } = useContext(GlobalContext);
-
-  let storedBook = favorite.find((obj) => obj.id === book.id);
-  console.log(storedBook);
-  console.log(favorite);
-
+  let storedBook = favorite.find((obj) => obj.id === book);
   const favoriteDisabled = storedBook ? true : false;
-  console.log(favoriteDisabled);
 
   const apiKey = 'AIzaSyBQzHEpacFfXbkBuVY1rXJbOWVrB0_W8Ho';
 

@@ -110,3 +110,15 @@ export const CardFooter = styled.div`
     }
   }
 `;
+
+export const ReadMore = styled.div`
+  margin-top: 15px;
+
+  a {
+    color: #5009ff;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+`;

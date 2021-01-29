@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
-import { FaSearch } from 'react-icons/fa';
-// import { Link } from 'react-router-dom';
+import { FaSearch, FaHeart } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 // import ReactPaginate from 'react-paginate';
 // import api from '../../services/api';
 import Container from '../../components/Container';
-import { MainTitle, Form, SubmitButton, BookCard, CardFooter } from './styles';
+import {
+  MainTitle,
+  Form,
+  SubmitButton,
+  BookCard,
+  CardFooter,
+  ReadMore,
+} from './styles';
 import NavBar from '../../components/NavBar';
 import CardPagination from '../../components/Pagination';
 import cat from '../../assets/img/zelda_thecat.jpg';
@@ -74,7 +81,14 @@ function Main() {
                 <p>
                   <strong>Autor:</strong> {book.volumeInfo.authors}
                 </p>
-                {/* <Link to={`/details/${book.id}`}>Ver mais</Link> */}
+                <div style={{ display: 'flex' }}>
+                  <ReadMore>
+                    <Link to={`/details/${book.id}`}>Ler mais</Link>
+                  </ReadMore>
+                  <button className="btn" type="button">
+                    <FaHeart color="red" size={14} />
+                  </button>
+                </div>
               </CardFooter>
             </div>
           ))}

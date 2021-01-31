@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Main from './pages/Main';
-import Details from './pages/Details';
-import Favorites from './pages/Favorites';
-import NoMatch from './pages/NoMatch';
+import Main from '../pages/Main';
+import Details from '../pages/Details';
+import Favorites from '../pages/Favorites';
+import NoMatch from '../pages/NoMatch';
 
 function Routes() {
   return (

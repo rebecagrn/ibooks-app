@@ -8,7 +8,7 @@ function Navbar() {
     <NavBar>
       <div>
         <Link to="/">
-          <img src={logoImg} width={40} alt="Logo" />
+          <img src={logoImg} width={140} alt="Logo" />
         </Link>
       </div>
       <ul>

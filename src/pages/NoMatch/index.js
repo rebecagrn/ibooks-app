@@ -1,13 +1,14 @@
 import React from 'react';
 import NavBar from '../../components/NavBar';
 import Container from '../../components/Container';
+import { Title } from '../Main';
 
 function NoMatch() {
   return (
     <>
       <NavBar />
       <Container>
-        <h1>404 - Page Not Found</h1>
+        <Title text="404 - Page Not Found" />
       </Container>
     </>
   );

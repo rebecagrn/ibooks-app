@@ -26,5 +26,11 @@ export const NavBar = styled.nav`
     &:hover {
       opacity: 0.9;
     }
+
+    @media (max-width: 768px) {
+      img {
+        width: 100px;
+      }
+    }
   }
 `;

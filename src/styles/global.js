@@ -31,10 +31,9 @@ export default createGlobalStyle`
     border: 0;
 
     &:disabled,
-    button[disabled] {
-      border: 1px solid #999999;
-      background-color: #cccccc;
-      color: #666666;
+    [disabled] {
+      border: 1px solid #f0f0f0;
+      background-color: #f0f0f0;
     }
   }
 `;

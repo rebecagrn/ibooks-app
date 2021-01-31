@@ -1,12 +1,20 @@
 import styled from 'styled-components';
 
 export const MainTitle = styled.div`
+  color: #5009ff;
   text-align: center;
   display: flex;
   justify-content: center;
   font-size: 26px;
   flex-direction: row;
   align-items: center;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 22px;
+    }
+  }
 `;
 
 export const Form = styled.form`
@@ -53,7 +61,7 @@ export const BookCard = styled.div`
     flex: 1 0 25%;
     margin: 10px;
     max-width: 300px;
-    min-height: 340px;
+    min-height: 355px;
     background: #fff;
     box-shadow: 0 0 20px rgb(0 0 0 / 10%);
     border-radius: 10px;
@@ -76,7 +84,7 @@ export const BookCard = styled.div`
 `;
 
 export const CardFooter = styled.div`
-  color: #292929;
+  color: #4a4a4a;
   border-radius: 4px;
   border-top: 1px solid #f5f5f5;
   padding: 10px;
@@ -105,12 +113,26 @@ export const CardFooter = styled.div`
     justify-content: space-between;
     align-items: center;
     margin-top: 10px;
+
+    .favorite-btn {
+      display: flex;
+      align-items: center;
+      width: 50px;
+      height: 23px;
+      border-radius: 4px;
+
+      svg {
+        margin: 0 auto;
+      }
+    }
   }
 
   button {
-    background: transparent;
-    display: flex;
-    align-items: center;
+    &:disabled {
+      svg {
+        color: red !important;
+      }
+    }
   }
 
   @media (max-width: 768px) {
@@ -127,6 +149,8 @@ export const CardFooter = styled.div`
 export const ReadMore = styled.div`
   a {
     color: #5009ff;
+    font-weight: 600;
+    text-decoration: none;
 
     &:hover {
       opacity: 0.8;

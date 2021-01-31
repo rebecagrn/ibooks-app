@@ -1,24 +1,27 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import NavBar from '../../components/NavBar';
 import Container from '../../components/Container';
-import { ButtonDefault } from './styles';
+import { Title } from '../Main';
+import { MainTitle } from '../Main/styles';
 
 function Details({ match }) {
   const bookId = match.params.id;
   return (
     <>
       <NavBar />
-      <ButtonDefault>
-        <Link to="/" className="back-to-home">
-          Voltar para Home
-        </Link>
-      </ButtonDefault>
       <Container>
-        <h1>Detalhes do Livro</h1>
-        <p>Título:</p>
-        <p>Subtítulo:</p>
-        <p>Descrição:</p>
+        <MainTitle>
+          <Title text="Detalhes do Livro" />
+        </MainTitle>
+        <p>
+          <strong>Título:</strong>
+        </p>
+        <p>
+          <strong>Subtítulo:</strong>
+        </p>
+        <p>
+          <strong>Descrição:</strong>
+        </p>
         <strong>ID:</strong> <span>{bookId}</span>
       </Container>
     </>

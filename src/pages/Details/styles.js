@@ -5,7 +5,7 @@ export const ButtonDefault = styled.button`
   padding: 10px 15px;
   border: 0;
   margin-top: 40px;
-  margin-left: 10px;
+  margin-left: 20px;
   border-radius: 4px;
 
   display: flex;

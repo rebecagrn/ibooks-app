@@ -1,14 +1,19 @@
 import styled from 'styled-components';
 
-export const Bookcard = styled.div`
-  justify-content: center;
+export const FavoriteCard = styled.div`
+  display: flex;
+  flex-wrap: wrap;
 
-  .img-thumbnail {
-    margin: 10px;
-  }
+  .favorite-card-item {
+    padding: 20px;
+    border: 1px solid #f4f4f4;
+    border-radius: 4px;
+    margin: 15px;
+    width: 500px;
+    flex-direction: column;
 
-  .card-text {
-    width: 280px;
-    max-width: 400px;
+    > div {
+      flex-direction: column;
+    }
   }
 `;

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import uuid from 'react-uuid';
 import { GlobalContext } from '../../context/GlobalState';
 import NavBar from '../../components/NavBar';
@@ -6,6 +7,7 @@ import Container from '../../components/Container';
 import { Title } from '../Main';
 import { MainTitle, BookCard } from '../Main/styles';
 import { FavoriteCard } from './styles';
+import { ButtonDefault } from '../../components/ButtonDefault/styles';
 import cat from '../../assets/img/zelda_thecat.jpg';
 
 function Favorites() {
@@ -47,6 +49,9 @@ function Favorites() {
         ) : (
           <h3>Não há livros nos favoritos.</h3>
         )}
+        <ButtonDefault>
+          <Link to="/">Back to home</Link>
+        </ButtonDefault>
       </Container>
     </>
   );

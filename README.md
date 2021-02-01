@@ -15,6 +15,10 @@
    <img src="src/assets/img/screenshot-fav.png" width="400px">
 </div>
 
+### Live URL, deployed on Netlify
+
+[ibooks app](https://i-books.netlify.app/).
+
 # :computer: Technologies
 
 This project was made using the follow technologies and libraries:

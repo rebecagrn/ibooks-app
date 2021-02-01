@@ -82,6 +82,7 @@ export const BookCard = styled.div`
   img {
     max-width: 160px;
     min-width: 140px;
+    max-height: 200px;
     display: block;
     object-fit: cover;
     margin: 0 auto;

@@ -51,6 +51,6 @@ $ yarn install
 $ yarn start
 ```
 
-Developed by [Rebeca](https://github.com/rebecagrn) 🚀.
+Developed by [Rebeca](https://rebecadeveloper.netlify.app/) 🚀.
 
 Give me a ⭐️ if this project helped you!

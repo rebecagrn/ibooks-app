@@ -16,7 +16,6 @@ function Details({ match }) {
 
   const getBookById = async (bookId) => {
     const results = await api.get(`volumes/${bookId}?key=${apiKey}`);
-    console.log(results.data.volumeInfo);
     return results.data.volumeInfo;
   };
 
@@ -33,9 +32,6 @@ function Details({ match }) {
         <MainTitle>
           <Title text="Detalhes do Livro" />
         </MainTitle>
-        {/* {book.imageLinks.medium && (
-          <img src={book.imageLinks.medium} alt={book.title} />
-        )} */}
         <CardDetails>
           <p>
             <strong>Título:</strong> {book.title}

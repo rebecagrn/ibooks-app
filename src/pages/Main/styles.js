@@ -18,7 +18,7 @@ export const MainTitle = styled.div`
 `;
 
 export const Form = styled.form`
-  margin-top: 30px;
+  margin: 30px 0;
   display: flex;
   flex-direction: row;
 
@@ -60,13 +60,19 @@ export const BookCard = styled.div`
   .card-item {
     flex: 1 0 25%;
     margin: 10px;
-    max-width: 300px;
+    padding: 1rem;
+    max-width: 22rem;
     min-height: 355px;
     background: #fff;
     box-shadow: 0 0 20px rgb(0 0 0 / 10%);
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    transition: 0.3s ease-in;
+
+    &:hover {
+      transform: scale(1.03);
+    }
 
     @media (max-width: 768px) {
       flex: 1 0 270px;
@@ -78,7 +84,7 @@ export const BookCard = styled.div`
     min-width: 140px;
     display: block;
     object-fit: cover;
-    margin: 10px auto;
+    margin: 0 auto;
     padding: 5px 8px;
   }
 `;
@@ -128,6 +134,12 @@ export const CardFooter = styled.div`
   }
 
   button {
+    transition: 0.3s ease-in;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
     &:disabled {
       svg {
         color: red !important;

@@ -47,10 +47,10 @@ $ git clone https://github.com/rebecagrn/ibooks-app.git
 # Install Dependencies
 $ yarn install
 
-# Run Aplication
+# Run Application
 $ yarn start
 ```
 
-Made by [Rebeca](https://github.com/rebecagrn) 🚀.
+Developed by [Rebeca](https://github.com/rebecagrn) 🚀.
 
 Give me a ⭐️ if this project helped you!

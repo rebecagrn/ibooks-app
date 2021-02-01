@@ -27,7 +27,9 @@ export default createGlobalStyle`
 
   button {
     cursor: pointer;
-    appearance: none !important;
+    -webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
     border: 0;
 
     &:disabled,

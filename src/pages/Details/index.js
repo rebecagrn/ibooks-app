@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import api from '../../services/http';
 import NavBar from '../../components/NavBar';
 import Container from '../../components/Container';
 import { Title } from '../Main';
 import { MainTitle } from '../Main/styles';
 import { CardDetails } from './styles';
-import { ButtonDefault } from '../../components/ButtonDefault/styles';
+import ButtonDefault from '../../components/ButtonDefault';
 import cat from '../../assets/img/zelda_thecat.jpg';
 
 function Details({ match }) {
@@ -29,9 +28,7 @@ function Details({ match }) {
   return (
     <>
       <NavBar />
-      <ButtonDefault>
-        <Link to="/">Back to home</Link>
-      </ButtonDefault>
+      <ButtonDefault />
       <Container>
         <MainTitle>
           <Title text="Detalhes do Livro" />

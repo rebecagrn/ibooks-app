@@ -1,17 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import NavBar from '../../components/NavBar';
-import { ButtonDefault } from '../../components/ButtonDefault/styles';
 import Container from '../../components/Container';
+import ButtonDefault from '../../components/ButtonDefault';
 import { Title } from '../Main';
 
 function NoMatch() {
   return (
     <>
       <NavBar />
-      <ButtonDefault>
-        <Link to="/">Back to home</Link>
-      </ButtonDefault>
+      <ButtonDefault />
       <Container>
         <Title text="404 - Page Not Found" />
       </Container>

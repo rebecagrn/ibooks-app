@@ -7,17 +7,16 @@ import Container from '../../components/Container';
 import { Title } from '../Main';
 import { MainTitle, BookCard } from '../Main/styles';
 import { FavoriteCard } from './styles';
-import { ButtonDefault } from '../../components/ButtonDefault/styles';
+import ButtonDefault from '../../components/ButtonDefault';
 import cat from '../../assets/img/zelda_thecat.jpg';
 
 function Favorites() {
   const { favorite } = useContext(GlobalContext);
+
   return (
     <>
       <NavBar />
-      <ButtonDefault>
-        <Link to="/">Back to home</Link>
-      </ButtonDefault>
+      <ButtonDefault />
       <Container>
         <MainTitle>
           <Title text="Favoritos" />

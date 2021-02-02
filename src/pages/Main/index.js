@@ -68,11 +68,7 @@ function Main() {
 
             return (
               <div className="card-item" key={book.id}>
-                <a
-                  href={book.volumeInfo.infoLink}
-                  target="_blank"
-                  rel="noreferrer"
-                >
+                <Link to={`/details/${book.id}/`}>
                   <img
                     src={
                       book.volumeInfo.imageLinks === undefined
@@ -81,7 +77,7 @@ function Main() {
                     }
                     alt={book.volumeInfo.title}
                   />
-                </a>
+                </Link>
                 <CardFooter>
                   <h3>{book.volumeInfo.title}</h3>
                   <p>

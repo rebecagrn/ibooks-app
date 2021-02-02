@@ -10,6 +10,17 @@ export const MainTitle = styled.div`
   align-items: center;
   margin-bottom: 20px;
 
+  h1 {
+    &::after {
+      content: '';
+      display: block;
+      width: 100px;
+      margin: 5px auto;
+      height: 4px;
+      background: currentColor;
+    }
+  }
+
   @media (max-width: 768px) {
     h1 {
       font-size: 22px;

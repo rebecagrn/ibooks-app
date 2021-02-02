@@ -7,6 +7,7 @@ import { Title } from '../Main';
 import { MainTitle } from '../Main/styles';
 import { CardDetails } from './styles';
 import { ButtonDefault } from '../../components/ButtonDefault/styles';
+import cat from '../../assets/img/zelda_thecat.jpg';
 
 function Details({ match }) {
   const bookId = match.params.id;
@@ -33,6 +34,15 @@ function Details({ match }) {
           <Title text="Detalhes do Livro" />
         </MainTitle>
         <CardDetails>
+          <img
+            src={
+              book.imageLinks === undefined
+                ? `${cat}`
+                : `${book.imageLinks.small}`
+            }
+            alt={book.title}
+            className="img-thumbnail"
+          />
           <p>
             <strong>Título:</strong> {book.title}
           </p>

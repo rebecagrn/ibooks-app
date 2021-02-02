@@ -15,6 +15,9 @@ function Favorites() {
   return (
     <>
       <NavBar />
+      <ButtonDefault>
+        <Link to="/">Back to home</Link>
+      </ButtonDefault>
       <Container>
         <MainTitle>
           <Title text="Favoritos" />
@@ -51,9 +54,6 @@ function Favorites() {
         ) : (
           <h3>Não há livros nos favoritos.</h3>
         )}
-        <ButtonDefault>
-          <Link to="/">Back to home</Link>
-        </ButtonDefault>
       </Container>
     </>
   );

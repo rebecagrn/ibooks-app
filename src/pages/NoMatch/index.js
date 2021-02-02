@@ -9,11 +9,11 @@ function NoMatch() {
   return (
     <>
       <NavBar />
+      <ButtonDefault>
+        <Link to="/">Back to home</Link>
+      </ButtonDefault>
       <Container>
         <Title text="404 - Page Not Found" />
-        <ButtonDefault>
-          <Link to="/">Back to home</Link>
-        </ButtonDefault>
       </Container>
     </>
   );

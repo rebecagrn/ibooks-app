@@ -49,7 +49,7 @@ $ git clone https://github.com/rebecagrn/ibooks-app.git
 ```bash
 
 # Install Dependencies
-$ yarn install
+$ yarn
 
 # Run Application
 $ yarn start

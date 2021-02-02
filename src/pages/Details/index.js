@@ -29,6 +29,9 @@ function Details({ match }) {
   return (
     <>
       <NavBar />
+      <ButtonDefault>
+        <Link to="/">Back to home</Link>
+      </ButtonDefault>
       <Container>
         <MainTitle>
           <Title text="Detalhes do Livro" />
@@ -61,9 +64,6 @@ function Details({ match }) {
           </p>
           <strong>Idioma: </strong> <span>{book.language}</span>
         </CardDetails>
-        <ButtonDefault>
-          <Link to="/">Back to home</Link>
-        </ButtonDefault>
       </Container>
     </>
   );

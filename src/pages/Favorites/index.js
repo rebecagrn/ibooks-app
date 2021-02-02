@@ -25,15 +25,17 @@ function Favorites() {
             {favorite.map((book) => (
               <div key={uuid()} type="favorite" className="favorite-card-item">
                 <BookCard>
-                  <img
-                    className="img-thumbnail"
-                    src={
-                      book.volumeInfo.imageLinks === undefined
-                        ? `${cat}`
-                        : `${book.volumeInfo.imageLinks.thumbnail}`
-                    }
-                    alt={book.volumeInfo.title}
-                  />
+                  <Link to={`/details/${book.id}/`}>
+                    <img
+                      className="img-thumbnail"
+                      src={
+                        book.volumeInfo.imageLinks === undefined
+                          ? `${cat}`
+                          : `${book.volumeInfo.imageLinks.thumbnail}`
+                      }
+                      alt={book.volumeInfo.title}
+                    />
+                  </Link>
                   <div className="card-text">
                     <h3>
                       <strong>Título</strong>: {book.volumeInfo.title}

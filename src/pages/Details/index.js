@@ -38,7 +38,7 @@ function Details({ match }) {
             src={
               book.imageLinks === undefined
                 ? `${cat}`
-                : `${book.imageLinks.small}`
+                : `${book.imageLinks.thumbnail}`
             }
             alt={book.title}
             className="img-thumbnail"

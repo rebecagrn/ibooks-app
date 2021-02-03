@@ -22,6 +22,7 @@ function Main() {
 
   const [searchBook, setSearchBook] = useState('');
   const [result, setResult] = useState([]);
+  const [error, setError] = useState(null);
 
   const apiKey = 'AIzaSyBQzHEpacFfXbkBuVY1rXJbOWVrB0_W8Ho';
 
@@ -31,16 +32,23 @@ function Main() {
     setSearchBook(book);
   }
 
-  async function handleSubmit(e) {
+  const getBookByName = (name) =>
+    api
+      .get(`/volumes?q=${name}&key=${apiKey}&maxResults=40`)
+      .then((results) => results.data.items);
+
+  function handleSubmit(e) {
     e.preventDefault();
 
-    const getBookByName = async (name) => {
-      const results = await api.get(
-        `/volumes?q=${name}&key=${apiKey}&maxResults=40`
-      );
-      return results.data.items;
-    };
-    setResult(await getBookByName(searchBook));
+    getBookByName(searchBook)
+      .then((items) => {
+        setResult(items);
+        setError(null);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setResult([]);
+      });
   }
 
   return (
@@ -61,46 +69,48 @@ function Main() {
             <FaSearch color="#fff" size={14} />
           </SubmitButton>
         </Form>
-        <BookCard>
-          {result.map((book) => {
-            const storedBook = favorite.find((obj) => obj.id === book.id);
-            const favoriteDisabled = !!storedBook;
+        {!error && (
+          <BookCard>
+            {result.map((book) => {
+              const storedBook = favorite.find((obj) => obj.id === book.id);
+              const favoriteDisabled = !!storedBook;
 
-            return (
-              <div className="card-item" key={book.id}>
-                <Link to={`/details/${book.id}/`}>
-                  <img
-                    src={
-                      book.volumeInfo.imageLinks === undefined
-                        ? `${cat}`
-                        : `${book.volumeInfo.imageLinks.thumbnail}`
-                    }
-                    alt={book.volumeInfo.title}
-                  />
-                </Link>
-                <CardFooter>
-                  <h3>{book.volumeInfo.title}</h3>
-                  <p>
-                    <strong>Autor:</strong> {book.volumeInfo.authors}
-                  </p>
-                  <div className="footer-links">
-                    <ReadMore>
-                      <Link to={`/details/${book.id}/`}>Ver detalhes</Link>
-                    </ReadMore>
-                    <button
-                      className="favorite-btn"
-                      type="button"
-                      disabled={favoriteDisabled}
-                      onClick={() => addBookToFavorite(book)}
-                    >
-                      <FaHeart color="#fff" size={14} />
-                    </button>
-                  </div>
-                </CardFooter>
-              </div>
-            );
-          })}
-        </BookCard>
+              return (
+                <div className="card-item" key={book.id}>
+                  <Link to={`/details/${book.id}/`}>
+                    <img
+                      src={
+                        book.volumeInfo.imageLinks === undefined
+                          ? `${cat}`
+                          : `${book.volumeInfo.imageLinks.thumbnail}`
+                      }
+                      alt={book.volumeInfo.title}
+                    />
+                  </Link>
+                  <CardFooter>
+                    <h3>{book.volumeInfo.title}</h3>
+                    <p>
+                      <strong>Autor:</strong> {book.volumeInfo.authors}
+                    </p>
+                    <div className="footer-links">
+                      <ReadMore>
+                        <Link to={`/details/${book.id}/`}>Ver detalhes</Link>
+                      </ReadMore>
+                      <button
+                        className="favorite-btn"
+                        type="button"
+                        disabled={favoriteDisabled}
+                        onClick={() => addBookToFavorite(book)}
+                      >
+                        <FaHeart color="#fff" size={14} />
+                      </button>
+                    </div>
+                  </CardFooter>
+                </div>
+              );
+            })}
+          </BookCard>
+        )}
       </Container>
     </>
   );
